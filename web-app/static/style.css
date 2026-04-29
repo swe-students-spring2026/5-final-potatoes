@@ -215,16 +215,6 @@ p {
   padding: 12px;
 }
 
-.home-post-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.home-post-link:hover {
-  opacity: 0.85;
-}
-
 .home-posts-text {
   white-space: pre-wrap;
   line-height: 1.45;
@@ -853,13 +843,6 @@ main.authentication a {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-}
-
-.post-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
 }
 
 .prof-sentiment-form {
