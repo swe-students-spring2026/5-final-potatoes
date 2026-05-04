@@ -1,6 +1,7 @@
 # Potatoes
 
-<!-- Insert CI test badges here -->
+[![Web App CI/CD](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/webapp.yml/badge.svg)](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/webapp.yml)
+[![ML Client CI/CD](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/ml-client.yml/badge.svg)](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/ml-client.yml)
 
 ## Overview
 An application that analyzes student feedback for professors using sentiment analysis, allowing users to join groups and filter reviews accordingly.
