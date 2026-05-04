@@ -29,10 +29,28 @@ The system is built with a microservice-style architecture, including:
 
 ---
 
+## Live Deployment
+
+- [Web App](https://potatoes-webapp.onrender.com/)
+** Note we used [Render](https://render.com/) for free deployment of our app because the Digital Ocean referral link was not working properly to give free credits. Since Render does not have database hosting, we also used MongoDB Atlas to host our database. 
+
+---
+
 ## Docker Hub Images
 
 - [Web App](https://hub.docker.com/repository/docker/ch4049/potatoes-webapp/general)  
 - [ML Client](https://hub.docker.com/repository/docker/ch4049/potatoes-ml-client/general)
+
+---
+
+## Production Architecture
+
+The deployed system uses:
+- Render Web Service for the Flask web app
+- Render Web Service for the ML sentiment service
+- MongoDB Atlas for the production MongoDB database
+- Docker Hub for published container images
+- GitHub Actions for testing, building, pushing images, and triggering Render deploys
 
 ---
 
@@ -164,5 +182,30 @@ Run:
 ```bash
 python client.py
 ```
+
+---
+
+## Option 3: Full Deployment to Render
+
+1. Push the latest image to Docker Hub.
+2. Configure the corresponding Render Web Service to deploy from the Docker Hub image.
+3. Set the required environment variables in Render.
+4. Add the Render deploy hook URL to GitHub Actions secrets.
+5. Push to `main` to trigger CI/CD.
+
+### Production Environment Variables
+
+Set these in Render for Web App:
+
+```bash
+MONGO_URI="mongodb+srv://<username>:<password>@<cluster-url>/?appName=potatoes"
+MONGO_DBNAME=potatoes
+SECRET_KEY="<secure-random-secret>"
+ML_SERVICE_URL="https://<ml-service>.onrender.com/analyze"
+APP_ENV=docker
+PORT=5000
+```
+
+For ML Client, set `PORT=5001`.
 
 ---
