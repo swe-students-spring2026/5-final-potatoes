@@ -1,7 +1,12 @@
+import os
 from flask import Flask, request
 from analyzer import analyze_feedback
 
 app = Flask(__name__)
+
+@app.get("/healthz")
+def healthz():
+    return {"ok": True}
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
@@ -15,4 +20,5 @@ def analyze():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    port = int(os.getenv("PORT", "5001"))
+    app.run(host="0.0.0.0", port=port, debug=False)

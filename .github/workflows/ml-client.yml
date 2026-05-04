@@ -57,3 +57,8 @@ jobs:
         if: github.event_name == 'push'
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/potatoes-ml-client:latest
+
+      - name: Deploy to Render
+        if: github.event_name == 'push'
+        run: |
+          curl -fsSL -X POST "${{ secrets.RENDER_ML_CLIENT_DEPLOY_HOOK }}"
