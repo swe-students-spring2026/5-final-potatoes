@@ -4,7 +4,7 @@
 [![ML Client CI/CD](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/ml-client.yml/badge.svg)](https://github.com/swe-students-spring2026/5-final-potatoes/actions/workflows/ml-client.yml)
 
 ## Overview
-An application that analyzes student feedback for professors using sentiment analysis, allowing users to join groups and filter reviews accordingly.
+An application that analyzes student feedback for professors using sentiment analysis.
 
 The system is built with a microservice-style architecture, including:
 - a Flask-based web application
@@ -13,9 +13,7 @@ The system is built with a microservice-style architecture, including:
 
 ## Features
 - 🔍 Sentiment analysis on student reviews
-- 👥 Group system for shared interests
 - 🏫 View professor ratings and reviews
-- ⭐ Filter reviews by group or user preferences
 - ✍️ Add and manage your own reviews
 ---
 
