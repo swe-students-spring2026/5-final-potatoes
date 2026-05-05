@@ -209,3 +209,31 @@ PORT=5000
 For ML Client, set `PORT=5001`.
 
 ---
+
+### MongoDB Atlas Setup
+
+The production deployment uses MongoDB Atlas. 
+
+To view the Database:
+
+1. Go to https://cloud.mongodb.com.
+2. Contact Albert Chen through email (azc9673@nyu.edu) or discord (albeans.) to be granted access to Atlas project.
+3. Open the `potatoes` Atlas project.
+4. Open the cluster named `potatoes`.
+5. Click `Browse Collections`.
+6. Select the `potatoes` database.
+
+The main collections used by the app are:
+
+- `users`
+- `professors`
+- `posts`
+- `groups`
+
+The deployed Render web app connects to Atlas through the `MONGO_URI` environment variable. Set the following env:
+
+```bash
+MONGO_DBNAME=potatoes
+```
+
+---
