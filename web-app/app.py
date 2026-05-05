@@ -341,7 +341,7 @@ def _update_professor_sentiment(professor_id: ObjectId) -> None:
         return
 
     # Aggregate overall score
-    overall_scores = [p["sentiment"]["overall"]["score"] for p in all_posts]
+    overall_scores = [p["sentiment"]["overall"]["score"] for p in all_posts if p.get("sentiment", {}).get("overall", {}).get("score") is not None]
     avg_overall = round(sum(overall_scores) / len(overall_scores), 1)
     avg_label = _polarity_to_label((avg_overall / 50) - 1)  # map 0-100 back to polarity
 
